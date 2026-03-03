@@ -147,6 +147,8 @@ The LLM's reasoning survives in the seed's thesis, feature choices, and risk par
 
 How well does the expanded 18-paper evidence base cover V4's core assumptions?
 
+### Fully Covered by Research
+
 | V4 Component | Gap / Assumption | Paper(s) Addressing It | Status |
 |--------------|-----------------|----------------------|--------|
 | LLM → feature engineering → XGBoost | Core hybrid pattern needs validation | Automate Strategy Finding, The New Quant, LLM-FE | ✅ **Covered** |
@@ -159,20 +161,38 @@ How well does the expanded 18-paper evidence base cover V4's core assumptions?
 | Memory architecture | Tiered memory for learning from trades | FinMem, FinCon | ✅ **Covered** |
 | Small local LLMs viable | Don't need GPT-4 scale | FLAG-Trader, Trading-R1 | ✅ **Covered** |
 | MCP/A2A tool interface | Agent orchestration protocols | Orchestration Framework | ✅ **Covered** |
-| Contest promotion threshold (5%) | Statistical significance of promotion | Walk-Forward Validation (partial) | ⚠️ **Partially covered** |
-| Regime conditioning value | Regime-aware signal activation | Walk-Forward Validation, ATLAS, HedgeAgents | ⚠️ **Partially covered** — no direct ablation of regime conditioning in isolation |
-| CVRF effectiveness for V4 | Conceptual verbal reinforcement in hybrid arch | FinCon (limited to LLM-as-Trader) | ⚠️ **Partially covered** — untested in Alpha-Miner context |
-| Memory tier contribution | Ablation of memory tiers | FinMem (limited) | ⚠️ **Partially covered** — no ablation of specific tier removal |
-| Cross-asset generalization | Equity + crypto + forex | Walk-Forward Validation, HedgeAgents | ⚠️ **Partially covered** — mostly equity-focused |
-| Transaction costs & slippage | Realistic execution modeling | — | ❌ **Still open** — virtually no paper accounts for this |
-| Live deployment validation | Paper-to-production gap | — | ❌ **Still open** — all results are backtested only |
 
-### Key Takeaways from Gap Analysis
+### Previously Partial/Open — Now Resolved in V4 Architecture
 
-1. **Core V4 design is well-supported**: The hybrid LLM-reasons/algorithm-executes pattern is validated by multiple independent papers (Automate Strategy Finding, RiskLabs, The New Quant survey)
-2. **Adversarial robustness is now addressable**: TradeTrap provides specific attack vectors and defense patterns V4 must implement
-3. **Backtesting methodology has a concrete template**: Walk-Forward Validation + FINSABER together define minimum rigor standards
-4. **Remaining gaps are execution-layer concerns**: Transaction costs, slippage, and live deployment — these require empirical testing, not more papers
+| V4 Component | Original Gap | Resolution | Architecture Section |
+|--------------|-------------|------------|---------------------|
+| Contest promotion threshold (5%) | Statistical significance unclear | Replaced fixed 5% with Deflated Sharpe + Wilcoxon signed-rank test (p < 0.05) on fold-by-fold comparison | Section 4.4 (Pipeline Flow, Step 7) |
+| Regime conditioning value | No direct ablation in literature | Built-in three-way ablation: regime-aware vs. regime-blind vs. regime-oracle, run in parallel during paper trading | Section 16 (Regime Conditioning Validation) |
+| CVRF effectiveness for V4 | Untested in Alpha-Miner context | CVRF targets seed generation quality (not trade decisions). Empirical validation plan: 30 cycles without → 30 with → compare Forge pass rates. Kill switch: simplify if <10% improvement | Section 15 (CVRF in Alpha-Miner Context) |
+| Memory tier contribution | No ablation of specific tiers | Instrumented memory access logging + per-tier influence metrics. Remove any tier with <5% influence rate after 90 days | Section 17 (Memory Tier Contribution Tracking) |
+| Cross-asset generalization | Mostly equity-focused | Deferred to V4.4. V4.0-V4.3 focus on US equities only. Architecture is asset-class agnostic (regime → model → execution) but validation is equity-only | Section 11 (Maturity Path, V4.4) |
+| Transaction costs & slippage | No paper models this | Full transaction cost model: commission + spread + square-root market impact. Applied at every Forge stage. Impact model calibrated monthly from live fills | Section 4.6 (Transaction Cost Model) |
+| Live deployment validation | Paper-to-production gap | Four-gate deployment: Backtest → Paper (60d) → Small Live (90d) → Production Scaling. Degradation budget with kill switches per metric | Section 14 (Paper-to-Production Transition Protocol) |
+
+### Newly Addressed Threats (Not in Original Gap Analysis)
+
+| Threat | Source | V4 Response | Architecture Section |
+|--------|--------|-------------|---------------------|
+| Data fabrication / MCP hijacking | TradeTrap | Cross-validation of data sources, anomaly detection, checksummed tool responses | Section 13.2-13.3 |
+| Prompt injection via Idea Agent | TradeTrap | Isolated context processing, schema validation, deterministic embeddings | Section 13.3 |
+| Memory poisoning | TradeTrap | Append-only hash chains, signed CVRF messages, deterministic embeddings | Section 13.3 |
+| State tampering | TradeTrap | Every-cycle broker reconciliation, data-hash verification on regime assessments | Section 13.3 |
+| Temporal leakage | The New Quant | Strict information-set discipline in Walk-Forward Validation, no lookahead in Seed Compiler | Section 4.5 |
+| ATLAS Reflection Paradox | ATLAS | Avoid naive self-critique; use quantitative windowed evaluation for prompt updates | Section 18 (Open Questions) |
+
+### Key Takeaways from Gap Analysis (Updated)
+
+1. **All 17 original gaps now have architectural resolutions.** 10 are covered by research, 7 are resolved by new V4 architecture sections with empirical validation plans.
+2. **Core V4 design is well-supported**: The hybrid LLM-reasons/algorithm-executes pattern is validated by multiple independent papers (Automate Strategy Finding, RiskLabs, The New Quant survey).
+3. **Adversarial robustness is architecturally addressed**: TradeTrap's 6 attack vectors map to specific defenses with zero-trust boundaries between Agent Research and Edge Execution.
+4. **Backtesting rigor exceeds literature standards**: Walk-Forward Validation + FINSABER + transaction cost modeling + Deflated Sharpe + statistical significance testing.
+5. **Empirical validation is built into the maturity path**: Regime ablation, CVRF validation, and memory tier contribution are measured during paper trading — not assumed to work.
+6. **Remaining risk is execution-layer**: Live deployment introduces unknowns (broker reliability, latency, market impact) that no paper can address. The four-gate protocol with degradation budgets manages this.
 
 ---
 
