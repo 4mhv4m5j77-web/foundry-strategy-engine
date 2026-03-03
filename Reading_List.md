@@ -1,112 +1,65 @@
 # The Foundry - Research Reading List
 
 ## Status Key
-- [x] Read
+- [x] Read (digest available)
 - [ ] Unread
 
----
-
-## Recommended Reading Order
-
-### Already Read
-
-- [x] **FINSABER** - *Can LLM-based Financial Investing Strategies Outperform the Market in Long Run?*
-  - Authors: Li, Kim, Cucuringu, Ma (KDD 2026)
-  - arXiv: [2505.07078](https://arxiv.org/abs/2505.07078) | [PDF](Papers/FINSABER_2505.07078.pdf)
-  - Key takeaway: LLM trading advantages deteriorate over longer horizons. Regime-aware risk controls matter more than framework complexity.
-
-- [x] **TradingAgents** - *Multi-Agents LLM Financial Trading Framework*
-  - Authors: Xiao, Sun, Luo, Wang (Tauric Research)
-  - arXiv: [2412.20138](https://arxiv.org/abs/2412.20138) | [PDF](Papers/TradingAgents_2412.20138.pdf)
-  - Key takeaway: Trading firm-inspired multi-agent architecture (analysts, researchers, traders, risk managers). Direct inspiration for V3 agent roles.
+> **Digests:** All papers have been converted to structured markdown digests in [`Digests/`](Digests/). Each digest is ~500-800 tokens covering Core Claim, Methodology, Key Results, V4 Relevance, Limitations, and Key References.
 
 ---
 
-### Phase 1: Architecture & Coordination (Read First)
+## Core Papers (Papers/)
 
-1. [ ] **ATLAS** - *Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination*
-   - Authors: Papadakis, Filandrianos, Dimitriou, Lymperaiou, Thomas, Stamou
-   - arXiv: [2510.15949](https://arxiv.org/abs/2510.15949) | [PDF](Papers/ATLAS_2510.15949.pdf)
-   - Relevance: **Agent Research Layer** - Adaptive-OPRO prompt optimization adapts agent behavior based on market regime. Multi-agent coordination patterns more sophisticated than TradingAgents.
+| # | Paper | arXiv | Venue | Digest |
+|---|-------|-------|-------|--------|
+| 1 | **FINSABER** — Can LLM-based Financial Investing Strategies Outperform the Market in Long Run? | [2505.07078](https://arxiv.org/abs/2505.07078) | KDD 2026 | [Digest](Digests/FINSABER.md) |
+| 2 | **TradingAgents** — Multi-Agents LLM Financial Trading Framework | [2412.20138](https://arxiv.org/abs/2412.20138) | Tauric Research | [Digest](Digests/TradingAgents.md) |
+| 3 | **ATLAS** — Adaptive Trading with LLM AgentS | [2510.15949](https://arxiv.org/abs/2510.15949) | Preprint | [Digest](Digests/ATLAS.md) |
+| 4 | **ContestTrade** — Multi-Agent Trading via Internal Contest Mechanism | [2508.00554](https://arxiv.org/abs/2508.00554) | FinStep-AI | [Digest](Digests/ContestTrade.md) |
+| 5 | **HedgeAgents** — Balanced-aware Multi-agent Financial Trading | [2502.13165](https://arxiv.org/abs/2502.13165) | WWW 2025 | [Digest](Digests/HedgeAgents.md) |
+| 6 | **Trading-R1** — Financial Trading with LLM Reasoning via RL | [2509.11420](https://arxiv.org/abs/2509.11420) | Tauric Research | [Digest](Digests/Trading_R1.md) |
+| 7 | **FinMem** — LLM Trading Agent with Layered Memory | [2311.13743](https://arxiv.org/abs/2311.13743) | ICLR Workshop | [Digest](Digests/FinMem.md) |
+| 8 | **FinAgent** — Multimodal Foundation Agent for Financial Trading | [2402.18485](https://arxiv.org/abs/2402.18485) | KDD 2024 | [Digest](Digests/FinAgent.md) |
 
-2. [ ] **ContestTrade** - *A Multi-Agent Trading System Based on Internal Contest Mechanism*
-   - Authors: Li Zhao et al. (FinStep-AI)
-   - arXiv: [2508.00554](https://arxiv.org/abs/2508.00554) | [PDF](Papers/ContestTrade_2508.00554.pdf)
-   - Relevance: **Parallel Strategy Comparison** - Internal contest mechanism for agent competition. Directly applicable to running multiple strategies in tandem and selecting winners. Open source (Apache 2.0).
+## Additional Papers (Additional Papers/)
 
-### Phase 2: Risk & Execution
-
-3. [ ] **HedgeAgents** - *A Balanced-aware Multi-agent Financial Trading System*
-   - Authors: Li, Zeng, Xing, Xu, Xu (WWW 2025)
-   - arXiv: [2502.13165](https://arxiv.org/abs/2502.13165) | [PDF](Papers/HedgeAgents_2502.13165.pdf)
-   - Relevance: **Edge Execution Layer** - Risk management and portfolio hedging across asset classes. 3 hedging agents + 1 manager with 23 tools and 3 memory types.
-
-4. [ ] **Trading-R1** - *Financial Trading with LLM Reasoning via Reinforcement Learning*
-   - Authors: Xiao, Sun, Chen, Wu, Luo, Wang (Tauric Research)
-   - arXiv: [2509.11420](https://arxiv.org/abs/2509.11420) | [PDF](Papers/Trading-R1_2509.11420.pdf)
-   - Relevance: **Feedback Loop Layer** - RL-trained reasoning for trading decisions. Easy-to-hard curriculum (SFT + RFT). Structured investment thesis generation.
-
-### Phase 3: Skeptic's Lens (Read Last)
-
-5. [ ] *Re-read FINSABER with context from papers 1-4*
-   - Focus on: Which failure modes from FINSABER do the other papers actually address? Which do they ignore?
-
-### Supplementary: Design Pattern Deep-Dives
-
-6. [ ] **FinMem** - *A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design*
-   - Authors: Yu, Li, Chen, Jiang, Li, Zhang, Liu, Suchow, Khashanah (IEEE TBD, ICLR Workshop)
-   - arXiv: [2311.13743](https://arxiv.org/abs/2311.13743) | [PDF](Papers/FinMem_2311.13743.pdf)
-   - Relevance: **Feedback Loop - Memory Architecture** - Three-tier memory (working/episodic/semantic) for learning from past trades. Adjustable cognitive span. Open source.
-
-7. [ ] **FinAgent** - *A Multimodal Foundation Agent for Financial Trading: Tool-Augmented, Diversified, and Generalist*
-   - Authors: Zhang, Zhao, Xia, Sun et al. (KDD 2024)
-   - arXiv: [2402.18485](https://arxiv.org/abs/2402.18485) | [PDF](Papers/FinAgent_2402.18485.pdf)
-   - Relevance: **Multimodal Data Integration** - Handles numeric, textual, and visual data. Tool-augmented design aligns with MCP tool interface. Dual-level reflection module.
+| # | Paper | arXiv | Venue | Digest |
+|---|-------|-------|-------|--------|
+| 9 | **LLM Agent Trading Survey** — Large Language Model Agent in Financial Trading | [2408.06361](https://arxiv.org/abs/2408.06361) | Columbia/NYU 2024 | [Digest](Digests/LLM_Agent_Trading_Survey.md) |
+| 10 | **FinCon** — Multi-Agent System with Conceptual Verbal Reinforcement | [2407.06567](https://arxiv.org/abs/2407.06567) | NeurIPS 2024 | [Digest](Digests/FinCon.md) |
+| 11 | **Orchestration Framework** — From Algorithmic to Agentic Trading | [2512.02227](https://arxiv.org/abs/2512.02227) | NeurIPS 2025 Workshop | [Digest](Digests/Orchestration_Framework.md) |
+| 12 | **FLAG-Trader** — Fusion LLM-Agent with Gradient-based RL | [2502.11433](https://arxiv.org/abs/2502.11433) | ACL 2025 Findings | [Digest](Digests/FLAG_Trader.md) |
+| 13 | **Automate Strategy Finding** — LLM in Quant Investment | [2409.06289](https://arxiv.org/abs/2409.06289) | EMNLP 2025 | [Digest](Digests/Automate_Strategy_Finding.md) |
+| 14 | **RiskLabs** — Financial Risk Using LLM on Multimodal Data | [2404.07452](https://arxiv.org/abs/2404.07452) | ICAIF '24 Workshop | [Digest](Digests/RiskLabs.md) |
+| 15 | **TradeTrap** — Adversarial Vulnerability Testing for LLM Trading Agents | [2512.02261](https://arxiv.org/abs/2512.02261) | Preprint 2025 | [Digest](Digests/TradeTrap.md) |
+| 16 | **Walk-Forward Validation** — Rigorous WFO Framework for Market Signals | [2512.12924](https://arxiv.org/abs/2512.12924) | Preprint 2025 | [Digest](Digests/Walk_Forward_Validation.md) |
+| 17 | **The New Quant** — LLMs in Financial Prediction and Trading (Survey) | [2510.05533](https://arxiv.org/abs/2510.05533) | Columbia 2025 | [Digest](Digests/The_New_Quant.md) |
+| 18 | **LLM-FE** — Automated Feature Engineering with LLMs | [2503.14434](https://arxiv.org/abs/2503.14434) | Preprint 2025 | [Digest](Digests/LLM_Feature_Engineering.md) |
 
 ---
 
-## Additional Papers (Highly Cited 2025-2026)
+## V4 Architecture Mapping
 
-These are landmark papers frequently cited across the LLM trading literature. Located in `Additional Papers/`.
-
-8. [ ] **LLM Agent in Financial Trading: A Survey** - *Large Language Model Agent in Financial Trading*
-   - Authors: Ding et al. (2024)
-   - arXiv: [2408.06361](https://arxiv.org/abs/2408.06361) | [PDF](Additional%20Papers/LLM_Agent_Trading_Survey_2408.06361.pdf)
-   - Why: **The foundational survey.** Reviewed 27 papers, defines the taxonomy (LLM-as-Trader vs LLM-as-Alpha-Miner) that every subsequent paper uses. Read this to understand how the field is organized.
-
-9. [ ] **FinCon** - *A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making*
-   - Authors: Yu, Yao, Li, Deng, Cao, Chen, Suchow et al. (NeurIPS 2024)
-   - arXiv: [2407.06567](https://arxiv.org/abs/2407.06567) | [PDF](Additional%20Papers/FinCon_2407.06567.pdf)
-   - Why: **Most-cited multi-agent trading paper of 2024-2025.** Manager-analyst hierarchy with Conceptual Verbal Reinforcement (CVRF). Uses CVaR risk control and text-based gradient descent for belief updates. Referenced in nearly every subsequent paper.
-
-10. [ ] **Orchestration Framework** - *From Algorithmic Trading to Agentic Trading*
-    - Authors: Li, Grover, Alpuerto, Cao, Liu (NeurIPS 2025 Workshop)
-    - arXiv: [2512.02227](https://arxiv.org/abs/2512.02227) | [PDF](Additional%20Papers/Orchestration_Framework_2512.02227.pdf)
-    - Why: **Uses MCP and A2A protocols** to orchestrate financial agents — the same stack you're building on. Maps every traditional algo trading component (alpha, risk, portfolio, execution, backtest) to autonomous agents. Open source: [Open-Finance-Lab/AgenticTrading](https://github.com/Open-Finance-Lab/AgenticTrading).
-
-11. [ ] **FLAG-Trader** - *Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading*
-    - Authors: Xiong, Deng, Wang, Cao, Li et al. (ACL 2025 Findings)
-    - arXiv: [2502.11433](https://arxiv.org/abs/2502.11433) | [PDF](Additional%20Papers/FLAG-Trader_2502.11433.pdf)
-    - Why: **Small local LLMs beating large proprietary models** via RL policy gradient optimization. Directly relevant to your local inference setup — shows you don't need GPT-4 scale to compete. Parameter-efficient fine-tuning + PPO with trading rewards.
-
----
-
-## V3 Architecture Mapping
-
-| Paper | Agent Research | Edge Execution | Feedback Loop |
-|-------|:---:|:---:|:---:|
-| TradingAgents | *** | * | * |
-| ATLAS | *** | * | ** |
-| ContestTrade | ** | * | ** |
-| HedgeAgents | * | *** | * |
-| Trading-R1 | * | * | *** |
-| FINSABER | - | - | *** (cautionary) |
-| FinMem | * | - | *** |
-| FinAgent | ** | * | ** |
-| Survey | ** | ** | ** (overview) |
-| FinCon | ** | ** | *** |
-| Orchestration | *** | *** | ** |
-| FLAG-Trader | * | * | *** |
+| Paper | Strategy Gen | Execution | Risk/Validation | Feedback Loop |
+|-------|:---:|:---:|:---:|:---:|
+| FINSABER | - | - | *** | *** (cautionary) |
+| TradingAgents | *** | * | * | * |
+| ATLAS | *** | * | * | ** |
+| ContestTrade | ** | * | ** | ** |
+| HedgeAgents | * | *** | *** | * |
+| Trading-R1 | * | * | * | *** |
+| FinMem | * | - | * | *** |
+| FinAgent | ** | * | * | ** |
+| Survey (2408) | ** | ** | ** | ** (overview) |
+| FinCon | ** | ** | *** | *** |
+| Orchestration | *** | *** | ** | ** |
+| FLAG-Trader | * | * | * | *** |
+| Automate Strategy | *** | - | * | ** |
+| RiskLabs | * | - | *** | * |
+| TradeTrap | - | * | *** | * (adversarial) |
+| Walk-Forward | - | - | *** | ** |
+| The New Quant | ** | ** | ** | ** (survey) |
+| LLM-FE | *** | - | * | ** |
 
 `***` = primary focus, `**` = secondary, `*` = touched on, `-` = not addressed
 
