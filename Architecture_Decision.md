@@ -3,7 +3,7 @@
 > **Date:** 2026-03-02 (Updated: 2026-03-03)
 > **Status:** APPROVED
 > **Supersedes:** V3 Architecture Plan (2026-02-26)
-> **Evidence base:** 18 research papers (see Reading_List.md, all digests in Digests/)
+> **Evidence base:** 19 research papers (see Reading_List.md, all digests in Digests/)
 
 ---
 
@@ -140,6 +140,7 @@ The LLM's reasoning survives in the seed's thesis, feature choices, and risk par
 | **Walk-Forward Validation** | Concrete walk-forward protocol (252d train, 63d test, 34 folds) as minimum validation standard |
 | **The New Quant (Survey)** | Comprehensive 2025 survey validating hybrid LLM+classical pattern; identifies temporal leakage risk |
 | **LLM-FE** | Evolutionary feature engineering with memory buffer; template for V4's Thesis Library |
+| **AlphaAgent** | Alpha decay defense: AST-based originality enforcement, hypothesis-factor alignment, SHAP feedback loop; Factor Zoo for crowding prevention |
 
 ---
 
@@ -221,3 +222,4 @@ All papers are in this repository with structured digests in `Digests/`:
 16. Walk-Forward Validation — 2512.12924 | [Digest](Digests/Walk_Forward_Validation.md)
 17. The New Quant (Survey) — 2510.05533 | [Digest](Digests/The_New_Quant.md)
 18. LLM-FE — 2503.14434 | [Digest](Digests/LLM_Feature_Engineering.md)
+19. AlphaAgent — 2502.16789 (KDD 2025) | [Digest](Digests/AlphaAgent.md)

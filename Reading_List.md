@@ -35,6 +35,7 @@
 | 16 | **Walk-Forward Validation** — Rigorous WFO Framework for Market Signals | [2512.12924](https://arxiv.org/abs/2512.12924) | Preprint 2025 | [Digest](Digests/Walk_Forward_Validation.md) |
 | 17 | **The New Quant** — LLMs in Financial Prediction and Trading (Survey) | [2510.05533](https://arxiv.org/abs/2510.05533) | Columbia 2025 | [Digest](Digests/The_New_Quant.md) |
 | 18 | **LLM-FE** — Automated Feature Engineering with LLMs | [2503.14434](https://arxiv.org/abs/2503.14434) | Preprint 2025 | [Digest](Digests/LLM_Feature_Engineering.md) |
+| 19 | **AlphaAgent** — LLM-Driven Alpha Mining with Regularized Exploration | [2502.16789](https://arxiv.org/abs/2502.16789) | KDD 2025 | [Digest](Digests/AlphaAgent.md) |
 
 ---
 
@@ -60,6 +61,7 @@
 | Walk-Forward | - | - | *** | ** |
 | The New Quant | ** | ** | ** | ** (survey) |
 | LLM-FE | *** | - | * | ** |
+| AlphaAgent | *** | - | ** | *** (decay defense) |
 
 `***` = primary focus, `**` = secondary, `*` = touched on, `-` = not addressed
 
@@ -75,3 +77,4 @@
 | FinMem | [pipiku915/FinMem-LLM-StockTrading](https://github.com/pipiku915/FinMem-LLM-StockTrading) | - |
 | Trading-R1 | [TauricResearch/Trading-R1](https://github.com/TauricResearch/Trading-R1) | - |
 | Orchestration | [Open-Finance-Lab/AgenticTrading](https://github.com/Open-Finance-Lab/AgenticTrading) | - |
+| AlphaAgent | [RndmVariableQ/AlphaAgent](https://github.com/RndmVariableQ/AlphaAgent) | - |
