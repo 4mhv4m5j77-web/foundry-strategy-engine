@@ -67,6 +67,22 @@
 
 ---
 
+## 2026 Additions — post-blueprint research scan (2026-07-04)
+
+Pulled + digested during the Refinery multi-agent-skill design review (foundry-core
+`plans/refinery-multiagent-skill/`). PDFs in `Additional Papers/` where arXiv serves one;
+Coordination Primacy has no full PDF on arXiv (1-page cover only) — digest is from the HTML rendition.
+
+| # | Paper | arXiv | Venue | Digest | Why it's here |
+|---|-------|-------|-------|--------|---------------|
+| 20 | **The Alpha Illusion** — Reported Alpha from LLM Trading Agents ≠ Deployment Evidence | [2605.16895](https://arxiv.org/abs/2605.16895) | Preprint 2026 (position) | [Digest](Digests/Alpha_Illusion.md) | P1–P6 minimum-evidence protocols; parametric-prior-lock-in; independent convergence on "LLM as auditable upstream interface" |
+| 21 | **QuantaAlpha** — Evolutionary Framework for LLM-Driven Alpha Mining | [2602.07085](https://arxiv.org/abs/2602.07085) | Preprint 2026 | [Digest](Digests/QuantaAlpha.md) | Trajectory-level mutation/crossover (idea-tier input); confirms evolutionary-archive + generation-gate bets with ablations |
+| 22 | **BlindTrade** — Anonymization-First Framework for Portfolio Optimization | [2603.17692](https://arxiv.org/abs/2603.17692) | ICLR 2026 FinAI wkshp | [Digest](Digests/BlindTrade.md) | Anonymization probe + negative-control shuffle test as generator-validation tools; realistic tiny-IC anchor |
+| 23 | **Profit Mirage** — Revisiting Information Leakage in LLM Financial Agents | [2510.07920](https://arxiv.org/abs/2510.07920) | Preprint 2025 | [Digest](Digests/Profit_Mirage.md) | PC/CI/IDS leakage-measurement triad; causal fine-tune leakage demo; FactFin ablation supports "LLM generates strategy, never predicts" |
+| 24 | **Coordination Primacy** — Reliable Evaluation of LLM Financial MAS | [2603.27539](https://arxiv.org/abs/2603.27539) | PAKDD 2026 wkshp | [Digest](Digests/Coordination_Primacy.md) | 5-failure evaluation rubric; CPH (coordination > model scale, tiered evidence); CBS cost-of-coordination frame. Analytical survey — framing, not evidence |
+
+---
+
 ## Open Source Implementations
 
 | Paper | Repo | License |
